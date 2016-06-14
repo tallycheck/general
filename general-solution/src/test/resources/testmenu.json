@@ -1,0 +1,186 @@
+{
+  "key": "",
+  "name": null,
+  "description": null,
+  "icon": "",
+  "url": "/",
+  "entity": "",
+  "securityGuard": null,
+  "entries": [
+    {
+      "key": "entertainment",
+      "name": "Entertainment",
+      "description": "Entertainment related stuff",
+      "icon": "fa-entertainment",
+      "url": "/entertainment",
+      "entity": null,
+      "securityGuard": null,
+      "entries": [
+        {
+          "key": "picture",
+          "name": "Picture",
+          "description": "Pictures",
+          "icon": "fa-pic",
+          "url": "/pic",
+          "entity": "com.example.entity.Picture",
+          "securityGuard": null,
+          "entries": [
+            {
+              "key": "material",
+              "name": "Material",
+              "description": "Material",
+              "icon": "",
+              "url": "/material",
+              "entity": "com.example.entity.Material",
+              "securityGuard": null,
+              "entries": []
+            }
+          ]
+        },
+        {
+          "key": "sound",
+          "name": "Sound",
+          "description": "Sounds (including music, elocnte ...)",
+          "icon": "",
+          "url": "/sound",
+          "entity": "com.example.entity.Sound",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "video",
+          "name": "Video",
+          "description": "Videos (including films, tv serials, video clips)",
+          "icon": "",
+          "url": "/video",
+          "entity": "com.example.entity.Video",
+          "securityGuard": null,
+          "entries": [
+            {
+              "key": "film",
+              "name": "Film",
+              "description": "Film",
+              "icon": "fa-pic",
+              "url": "/video/film",
+              "entity": "com.example.entity.Film",
+              "securityGuard": null,
+              "entries": []
+            },
+            {
+              "key": "tv-serial",
+              "name": "TV Serial",
+              "description": "TV Serial",
+              "icon": "fa-pic",
+              "url": "/video/tv-serial",
+              "entity": "com.example.entity.TVSerial",
+              "securityGuard": null,
+              "entries": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "work",
+      "name": "Work",
+      "description": "Work stuff",
+      "icon": "",
+      "url": "/work",
+      "entity": null,
+      "securityGuard": null,
+      "entries": [
+        {
+          "key": "tool",
+          "name": "Tool",
+          "description": "Tools",
+          "icon": "",
+          "url": "/tool",
+          "entity": "com.example.entity.Tool",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "sketch",
+          "name": "Sketch",
+          "description": "Sketch",
+          "icon": "",
+          "url": "/sketch",
+          "entity": "com.example.entity.Sketch",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "material",
+          "name": "Material",
+          "description": "Material",
+          "icon": "",
+          "url": "/material",
+          "entity": "com.example.entity.Material",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "trash",
+          "name": "Trash",
+          "description": "Trash",
+          "icon": "",
+          "url": "/trash",
+          "entity": "com.example.entity.Trash",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "finished",
+          "name": "Finished",
+          "description": "Finished",
+          "icon": "",
+          "url": "/finished",
+          "entity": "com.example.entity.Finished",
+          "securityGuard": null,
+          "entries": []
+        }
+      ]
+    },
+    {
+      "key": "study",
+      "name": "Study",
+      "description": "Study related stuff",
+      "icon": "",
+      "url": "/study",
+      "entity": null,
+      "securityGuard": null,
+      "entries": [
+        {
+          "key": "tool",
+          "name": "Tool",
+          "description": "Tools",
+          "icon": "",
+          "url": "/tool",
+          "entity": "com.example.entity.Tool",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "book",
+          "name": "Book",
+          "description": "Book",
+          "icon": "",
+          "url": "/book",
+          "entity": "com.example.entity.Book",
+          "securityGuard": null,
+          "entries": []
+        },
+        {
+          "key": "demo",
+          "name": "Demo",
+          "description": "Demo",
+          "icon": "",
+          "url": "/demo",
+          "entity": "com.example.entity.Demo",
+          "securityGuard": null,
+          "entries": []
+        }
+      ]
+    }
+  ]
+}
