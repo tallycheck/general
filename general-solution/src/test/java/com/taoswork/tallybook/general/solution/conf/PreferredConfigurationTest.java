@@ -91,14 +91,14 @@ public class PreferredConfigurationTest {
     }
 
     private void ensureHomePath2Properties(PreferredConfiguration prefConfiguration) {
-        prefConfiguration.pushOverrideUnderHomePath(FN_4_HOMEPATH2);
+        prefConfiguration.pushOverrideViaUserHome(FN_4_HOMEPATH2);
         Configuration conf = prefConfiguration.makeConfiguration();
         String abc = conf.getString(ABC_KEY);
         Assert.assertTrue(ABC_HOMEPATH2.equals(abc));
     }
 
     private void ensureHomePathProperties(PreferredConfiguration prefConfiguration) {
-        prefConfiguration.pushOverrideUnderHomePath(FN_4_HOMEPATH);
+        prefConfiguration.pushOverrideViaUserHome(FN_4_HOMEPATH);
         Configuration conf = prefConfiguration.makeConfiguration();
         String abc = conf.getString(ABC_KEY);
         Assert.assertTrue(ABC_HOMEPATH.equals(abc));
