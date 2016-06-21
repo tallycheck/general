@@ -69,7 +69,12 @@
             <dependency>
                 <groupId>com.taoswork.tallycheck</groupId>
                 <artifactId>general-calendar</artifactId>
-                <version>${tallybook.framework.version}</version>
+                <version>${tallycheck.general.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.taoswork.tallycheck</groupId>
+                <artifactId>general-test-material</artifactId>
+                <version>${tallycheck.general.version}</version>
             </dependency>
             <!-- Tallycheck General Libraries ] -->
 
@@ -147,6 +152,12 @@
                 <artifactId>commons-collections4</artifactId>
                 <version>4.0</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-configuration2</artifactId>
+                <version>2.0</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-io</artifactId>
@@ -256,5 +267,6 @@
         <module>general-solution</module>
         <module>general-web</module>
         <module>general-calendar</module>
+        <module>general-test-material</module>
     </modules>
 </project>
