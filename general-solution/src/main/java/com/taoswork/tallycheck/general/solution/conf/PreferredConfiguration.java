@@ -43,7 +43,7 @@ public class PreferredConfiguration {
         return pushOverrideViaBasePath(System.getProperty(PROP_HOME), filename);
     }
 
-    public PreferredConfiguration pushOverrideViaClasspath(String filename) {
+    public PreferredConfiguration pushOverrideViaClassPath(String filename) {
         Parameters parameters = new Parameters();
         FileBasedBuilderParameters fbParameters = parameters.fileBased();
 

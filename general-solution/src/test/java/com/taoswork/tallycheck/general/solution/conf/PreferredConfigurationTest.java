@@ -63,14 +63,14 @@ public class PreferredConfigurationTest {
     }
 
     private void ensureClasspath2Properties(PreferredConfiguration prefConfiguration) {
-        prefConfiguration.pushOverrideViaClasspath(FN_4_CLASSPATH2);
+        prefConfiguration.pushOverrideViaClassPath(FN_4_CLASSPATH2);
         Configuration conf = prefConfiguration.makeConfiguration();
         String abc = conf.getString(ABC_KEY);
         Assert.assertTrue(ABC_CLASSPATH2.equals(abc));
     }
 
     private void ensureClasspathProperties(PreferredConfiguration prefConfiguration) {
-        prefConfiguration.pushOverrideViaClasspath(FN_4_CLASSPATH);
+        prefConfiguration.pushOverrideViaClassPath(FN_4_CLASSPATH);
         Configuration conf = prefConfiguration.makeConfiguration();
         String abc = conf.getString(ABC_KEY);
         Assert.assertTrue(ABC_CLASSPATH.equals(abc));
