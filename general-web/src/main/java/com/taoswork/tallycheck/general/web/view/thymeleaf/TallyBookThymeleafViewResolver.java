@@ -77,7 +77,7 @@ public class TallyBookThymeleafViewResolver extends ThymeleafViewResolver {
 
     @Override
     public boolean isCache() {
-        boolean cacheEnabled = RuntimePropertiesPublisher.instance().getBoolean("thymeleaf.tallybook.extension.cache.enable", true);
+        boolean cacheEnabled = RuntimePropertiesPublisher.instance().getBoolean("thymeleaf.tallycheck.extension.cache.enable", true);
         if (cacheEnabled) {
             return super.isCache();
         } else {
