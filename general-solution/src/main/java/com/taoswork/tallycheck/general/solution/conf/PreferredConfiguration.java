@@ -62,7 +62,7 @@ public class PreferredConfiguration {
             Configuration conf = builder.getConfiguration();
             this.pushOverride(conf);
         } catch (ConfigurationException e) {
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return this;
     }
@@ -73,6 +73,9 @@ public class PreferredConfiguration {
     }
 
     public PreferredConfiguration pushOverride(File file) {
+        if(!(file.exists() && file.isFile())){
+            return this;
+        }
         try {
             URL url = file.toURI().toURL();
 
