@@ -12,6 +12,7 @@ buildNumber.properties
 /.log/
 .classpath
 .project
+**/*.iml
 *.iml
 rebel.xml
 derby.log
