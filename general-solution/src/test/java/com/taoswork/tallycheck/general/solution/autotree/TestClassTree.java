@@ -23,11 +23,11 @@ public class TestClassTree {
         StringTree aab = accessor.add(a, "AAB");
         StringTree bb = accessor.add(a, "BB");
 
-        String xx = a.buildTreeString(false, delimiter);
-        String xxx = a.getRoot().buildTreeString(false, delimiter);
+        String aTree = a.buildTreeString(false, delimiter);
+        String aRootTree = a.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)A*(1)AA*(2)AAA*(3)AAAA*(2)AAB*");
-        Assert.assertEquals(xxx, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(3)AAB*(1)B*(2)BB*");
+        Assert.assertEquals(aTree, "(0)A*(1)AA*(2)AAA*(3)AAAA*(2)AAB*");
+        Assert.assertEquals(aRootTree, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(3)AAB*(1)B*(2)BB*");
 
         Assert.assertSame(aa, accessor.find(a, "AA", false));
         Assert.assertSame(aa, accessor.find(a, "AA", true));
@@ -97,11 +97,11 @@ public class TestClassTree {
         StringTree aab = accessor.add(a, "AAB");
         StringTree bbc = accessor.add(a, "BBC");
 
-        String xx = a.buildTreeString(false, delimiter);
-        String xxx = a.getRoot().buildTreeString(false, delimiter);
+        String aTree = a.buildTreeString(false, delimiter);
+        String aRootTree = a.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)A*(1)AA*(2)AAA*(3)AAAA*(2)AAB*");
-        Assert.assertEquals(xxx, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(3)AAB*(1)B*(2)BB*(3)BBC*");
+        Assert.assertEquals(aTree, "(0)A*(1)AA*(2)AAA*(3)AAAA*(2)AAB*");
+        Assert.assertEquals(aRootTree, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(3)AAB*(1)B*(2)BB*(3)BBC*");
 
         Assert.assertSame(aaaa, accessor.find(a, "AAAA", false));
         Assert.assertSame(aaa, accessor.find(a, "AAA", false));
@@ -124,11 +124,11 @@ public class TestClassTree {
         StringTree bbc = accessor.add(aa, "BBC");
         Assert.assertNull(bbc);
 
-        String xx = aa.buildTreeString(false, delimiter);
-        String xxx = aa.getRoot().buildTreeString(false, delimiter);
+        String aaTree = aa.buildTreeString(false, delimiter);
+        String aaRootTree = aa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AA*(1)AAA*(2)AAAA*");
-        Assert.assertEquals(xxx, xx);
+        Assert.assertEquals(aaTree, "(0)AA*(1)AAA*(2)AAAA*");
+        Assert.assertEquals(aaRootTree, aaTree);
 
         Assert.assertNull(accessor.find(aa, "BBC", false));
         Assert.assertNull(accessor.find(aa, "BBC", true));
@@ -155,11 +155,11 @@ public class TestClassTree {
         StringTree a = accessor.add(aa, "A");
         StringTree bbc = accessor.add(aa, "BBC");
 
-        String xx = aa.buildTreeString(false, delimiter);
-        String xxx = aa.getRoot().buildTreeString(false, delimiter);
+        String aaTree = aa.buildTreeString(false, delimiter);
+        String aaRootTree = aa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AA*(1)AAA*(2)AAAA*");
-        Assert.assertEquals(xxx, xx);
+        Assert.assertEquals(aaTree, "(0)AA*(1)AAA*(2)AAAA*");
+        Assert.assertEquals(aaRootTree, aaTree);
 
 
         Assert.assertSame(aaaa, accessor.find(aa, "AAAA", false));
@@ -179,11 +179,11 @@ public class TestClassTree {
         StringTree aaaaa =accessor.add(aaaa, "AAAAA");
         Assert.assertNull(aaaaa);
 
-        String xx = aaaa.buildTreeString(false, delimiter);
-        String xxx = aaaa.getRoot().buildTreeString(false, delimiter);
+        String aaaaTree = aaaa.buildTreeString(false, delimiter);
+        String aaaaRootTree = aaaa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AAAA*");
-        Assert.assertEquals(xxx, "(0)A*(1)AA*(2)AAA*(3)AAAA*");
+        Assert.assertEquals(aaaaTree, "(0)AAAA*");
+        Assert.assertEquals(aaaaRootTree, "(0)A*(1)AA*(2)AAA*(3)AAAA*");
 
         Assert.assertSame(a, accessor.find(a, "A", false));
         Assert.assertSame(a, accessor.find(a, "A", true));
@@ -235,11 +235,11 @@ public class TestClassTree {
         StringTree bbc = accessor.add(aa, "BBC");
         Assert.assertNull(bbc);
 
-        String xx = aa.buildTreeString(false, delimiter);
-        String xxx = aa.getRoot().buildTreeString(false, delimiter);
+        String aaTree = aa.buildTreeString(false, delimiter);
+        String aaRootTree = aa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AA*");
-        Assert.assertEquals(xxx, "(0)A*(1)AA*");
+        Assert.assertEquals(aaTree, "(0)AA*");
+        Assert.assertEquals(aaRootTree, "(0)A*(1)AA*");
 
         Assert.assertSame(null, accessor.find(aa, "AAAA", false));
         Assert.assertNotSame(a, accessor.find(aa, "A", false));
@@ -256,11 +256,11 @@ public class TestClassTree {
         StringTree aaaa = accessor.add(aaa, "AAAA");
         StringTree bbc = accessor.add(aaa, "BBC");
 
-        String xx = aaa.buildTreeString(false, delimiter);
-        String xxx = aaa.getRoot().buildTreeString(false, delimiter);
+        String aaaTree = aaa.buildTreeString(false, delimiter);
+        String aaaRootTree = aaa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AAA*(1)AAAA*");
-        Assert.assertEquals(xxx, "(0)A*(1)AA*(2)AAA*(3)AAAA*");
+        Assert.assertEquals(aaaTree, "(0)AAA*(1)AAAA*");
+        Assert.assertEquals(aaaRootTree, "(0)A*(1)AA*(2)AAA*(3)AAAA*");
 
         Assert.assertNotSame(a, accessor.find(aaa, "A", false));
         Assert.assertSame(a, accessor.find(aaa, "A", true));
@@ -281,11 +281,11 @@ public class TestClassTree {
         StringTree a = accessor.add(aa, "A");
         StringTree bbc = accessor.add(aa, "BBC");
 
-        String xx = aa.buildTreeString(false, delimiter);
-        String xxx = aa.getRoot().buildTreeString(false, delimiter);
+        String aaTree = aa.buildTreeString(false, delimiter);
+        String aaRootTree = aa.getRoot().buildTreeString(false, delimiter);
 
-        Assert.assertEquals(xx, "(0)AA*(1)AAA*(2)AAAA*");
-        Assert.assertEquals(xxx, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(1)B*(2)BB*(3)BBC*");
+        Assert.assertEquals(aaTree, "(0)AA*(1)AAA*(2)AAAA*");
+        Assert.assertEquals(aaRootTree, "(0)*(1)A*(2)AA*(3)AAA*(4)AAAA*(1)B*(2)BB*(3)BBC*");
 
         Assert.assertSame(a, accessor.find(a, "A", false));
         Assert.assertSame(a, accessor.find(a, "A", true));
