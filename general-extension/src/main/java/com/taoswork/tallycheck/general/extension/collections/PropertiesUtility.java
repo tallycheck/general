@@ -26,7 +26,7 @@ public class PropertiesUtility {
     }
 //    Properties getSubCollectionProperties(String prefix, String newPrefix);
 
-    public static Properties getSubProperties(Properties src, String prefix){
+    public static Properties getSubProperties(Properties src, String prefix) {
         Properties persistenceProps = new Properties();
         for (String key : src.stringPropertyNames()) {
             if (key.startsWith(prefix)) {
@@ -39,7 +39,7 @@ public class PropertiesUtility {
 
     public static Properties updateKeyPrefix(Properties src, Properties des,
                                              String prefix, String newPrefix,
-                                             boolean removeExisting){
+                                             boolean removeExisting) {
         Map<String, String> persistenceProps = new HashMap<String, String>();
         List<String> removeList = new ArrayList<String>();
         for (String key : src.stringPropertyNames()) {
@@ -47,20 +47,30 @@ public class PropertiesUtility {
                 String newKey = newPrefix + key.substring(prefix.length());
                 String value = src.getProperty(key);
                 persistenceProps.put(newKey, value);
-                if(removeExisting){
+                if (removeExisting) {
                     removeList.add(key);
                 }
             }
         }
-        if(removeExisting){
-            for (String key : removeList){
+        if (removeExisting) {
+            for (String key : removeList) {
                 src.remove(key);
             }
         }
-        if(des == null){
+        if (des == null) {
             des = new Properties();
         }
         des.putAll(persistenceProps);
         return des;
+    }
+
+    public static Map<String, String> propertiesToMap(Properties props) {
+        Map<String, String> map = new HashMap<>();
+        for (String key : props.stringPropertyNames()) {
+            String value = props.getProperty(key);
+            map.put(key, value);
+
+        }
+        return map;
     }
 }
