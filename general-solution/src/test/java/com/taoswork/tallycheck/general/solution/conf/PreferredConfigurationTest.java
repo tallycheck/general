@@ -280,4 +280,10 @@ public class PreferredConfigurationTest {
             ensureAbsoluteProperties(prefConfiguration);
         }
     }
+
+    @Test
+    public void testTallycheckConfiguration(){
+        Configuration conf = TallycheckConfiguration.instance();
+        Assert.assertNotNull(conf);
+    }
 }
