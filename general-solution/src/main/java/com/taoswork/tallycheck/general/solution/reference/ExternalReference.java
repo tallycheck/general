@@ -1,7 +1,7 @@
 package com.taoswork.tallycheck.general.solution.reference;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 import java.util.function.BiConsumer;
 
@@ -15,16 +15,16 @@ public class ExternalReference implements Serializable {
     /**
      * Slots referencing other entities
      */
-    private final List<ReferencingSlot> referencingSlots = new ArrayList<ReferencingSlot>();
+    private final List<EntityReference> referencingSlots = new ArrayList<EntityReference>();
 
-    public void publishReference(Object holder, Field holdingField, Class entityType, String id){
+    public void publishReference(Object holder, String holdingField, Class entityType, String id){
         String entityTypeName = entityType.getName();
         referencesByType.putIfAbsent(entityType, new EntityIds(entityTypeName));
         EntityIds references = referencesByType.get(entityType);
         references.pushReference(id);
 
         EntityId pr = new EntityId(entityTypeName, id);
-        referencingSlots.add(new ReferencingSlot(holder, holdingField, pr));
+        referencingSlots.add(new EntityReference(holder, holdingField, pr));
     }
 
     public boolean hasReference(){
@@ -57,7 +57,7 @@ public class ExternalReference implements Serializable {
 
     public void fillReferencingSlots(Map<String, EntityRecords> records) throws EntityFetchException{
         try {
-            for (ReferencingSlot slot : referencingSlots) {
+            for (EntityReference slot : referencingSlots) {
                 EntityId reference = slot.getEntityId();
                 String entityType = reference.getEntityType();
                 String entityId = reference.getEntityId();
@@ -71,6 +71,10 @@ public class ExternalReference implements Serializable {
                 }
             }
         } catch (IllegalAccessException e) {
+            throw new EntityFetchException(e);
+        } catch (NoSuchMethodException e) {
+            throw new EntityFetchException(e);
+        } catch (InvocationTargetException e) {
             throw new EntityFetchException(e);
         }
     }
