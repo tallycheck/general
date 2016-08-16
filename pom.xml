@@ -14,7 +14,7 @@
     <properties>
         <tallycheck.general.version>${project.version}</tallycheck.general.version>
         <spring.version>4.2.4.RELEASE</spring.version>
-        <thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
+        <thymeleaf.version>2.1.5.RELEASE</thymeleaf.version>
     </properties>
 
     <build>
