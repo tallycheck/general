@@ -71,11 +71,6 @@
                 <artifactId>general-calendar</artifactId>
                 <version>${tallycheck.general.version}</version>
             </dependency>
-            <dependency>
-                <groupId>com.taoswork.tallycheck</groupId>
-                <artifactId>general-test-material</artifactId>
-                <version>${tallycheck.general.version}</version>
-            </dependency>
             <!-- Tallycheck General Libraries ] -->
 
             <!-- Spring Libraries [ -->
@@ -272,6 +267,5 @@
         <module>general-solution</module>
         <module>general-web</module>
         <module>general-calendar</module>
-        <module>general-test-material</module>
     </modules>
 </project>
