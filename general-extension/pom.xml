@@ -37,8 +37,8 @@
             <artifactId>logback-classic</artifactId>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
+            <groupId>com.taoswork.tallycheck</groupId>
+            <artifactId>junit-ext</artifactId>
         </dependency>
     </dependencies>
 

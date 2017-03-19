@@ -16,5 +16,6 @@ buildNumber.properties
 **/*.iml
 *.iml
 rebel.xml
+.rebel.xml.bak
 derby.log
 *.log
